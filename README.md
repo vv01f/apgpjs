@@ -27,7 +27,7 @@ you can either
 
 to edit your existing key and delete an id with gpg on cli:
 
-  gpg --editkey {keyid}
+    gpg --editkey {keyid}
 
 in gpg command line:
 
@@ -38,4 +38,4 @@ in gpg command line:
 
 back on cli:
 
-  gpg --export -a {keyid} >pubkeyfile.asc
+    gpg --export -a {keyid} >pubkeyfile.asc
