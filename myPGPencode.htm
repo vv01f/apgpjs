@@ -1,0 +1,252 @@
+<!doctype HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+	<title>OpenPGP Message Encryption in JavaScript Demo</title>
+	<style>
+body{
+	font-family: helvetica, tahoma, arial;
+	text-align: center;
+}
+input, select, textarea {
+	font-family: courier new, courier, terminal;
+	font-size: 1.05em;
+}
+textarea{
+	height: 5em;
+	max-width: 380px;
+}
+table {
+	margin: 0 auto;
+}
+.hidden {
+	display: none;
+}
+#footer {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	border-top: 1px solid darkgrey;
+	background: lightgrey;
+}
+#jswarning{
+	background: yellow; 
+	color: red;
+	border: 1px solid red;
+	margin: auto;
+	max-width: 400px;
+}
+	</style>
+</head>
+
+<body onload="load()">
+
+<h2>PGP-Nachricht per JavaScript</h2>
+<p id="jswarning"><strong>Ihr Browser muss JavaScript unterstützen um die Funktion dieser Seite vollständig nutzen zu können.</strong><br />Normalerweise wird dieser Text durch JavaScript ausgeblendet, prüfen Sie ob JavaScript in ihrem Browser deaktiert wurde, eine Browsererweiterung die Ausfürhung blockiert oder sie einen anderen Browser verwenden können.
+</p>
+<form name=t action="javascript:getkey()">
+<table>
+
+<tr>
+<td colspan=2><br />PGP Public Key Block (Inhalt einer exportierten asc-Datei):<br />
+<textarea id=pubkey name="pubkey" rows=8 cols=80>
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1.4.12 (GNU/Linux)
+
+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
+=W6Jt
+-----END PGP PUBLIC KEY BLOCK-----
+</textarea></td>
+</tr>
+
+<tr>
+<td colspan=2><input type=submit id="getkeyinfo" value="Key-Information auslesen"></td>
+</tr>
+
+<tr class="hidden">
+<td>Version:</td>
+<td><input size=40 name="vers" readonly></td>
+</tr>
+
+<tr class="hidden">
+<td>User ID:</td>
+<td><input size=40 name="user" readonly></td>
+</tr>
+
+<tr class="hidden">
+<td>Key Fingerprint&nbsp;(20 Bytes in hex):</td>
+<td><input size=40 name="keyfp" readonly></td>
+</tr>
+
+<tr class="hidden">
+<td>Key ID&nbsp;(8 bytes in hex):</td>
+<td><input size=40 name="keyid" readonly></td>
+</tr>
+
+<tr class="hidden">
+<td>Public Key&nbsp;(MPIs in base64):</td>
+<td><input size=5 name="pktype" readonly> <input size=34 name="pkey" readonly></td>
+</tr>
+
+</table>
+</form>
+
+
+<form name=e action="javascript:encrypt()">
+<table>
+
+<tr class="hidden">
+<td>Public Key des Empfängers&nbsp;(MPI in base64):</td>
+<td><input size=40 name="pkey"></td>
+</tr>
+
+<tr class="hidden">
+<td>Key-Typ des Public Key:</td>
+<td><select size=1 name="pktype" disabled><option value='RSA'>RSA</option><option value='ELGAMAL'>Elgamal</option></select></td>
+</tr>
+
+<tr class="hidden">
+<td>Key ID des Public Key&nbsp;(8 bytes in hex):</td>
+<td><input size=40 name="keyid"></td>
+</tr>
+
+<tr><td colspan=2>
+<br />Nachricht:<br />
+<textarea name="text" rows=8 cols=80>Bitte Klartext eingeben, verschlüsselter Text erscheint später hier ...</textarea>
+</td></tr>
+
+<tr>
+<td align=center colspan=2><input type=submit name="encrypt" id="encrypt" value="Nachricht verschlüsseln" disabled=disabled><br />
+<div class="hidden">Das dauerte <input size=4 name="howLong" id="howLong"> Sekunden</div>
+</td></tr>
+</table>
+</form>
+
+<script language="Javascript" src="rsa.js" type="text/javascript"></script>
+<script language="Javascript" src="aes-enc.js" type="text/javascript"></script>
+<script language="Javascript" src="base64.js" type="text/javascript"></script>
+<script language="Javascript" src="mouse.js" type="text/javascript"></script>
+<script language="Javascript" src="PGencode.js" type="text/javascript"></script>
+<script language="Javascript" src="sha1.js" type="text/javascript"></script>
+<script language="Javascript" src="PGpubkey.js" type="text/javascript"></script>
+<script language="Javascript" type="text/javascript">
+
+var keytyp = -1;      // 0=RSA, 1=Elgamal
+var keyid = '';
+var pubkey = '';
+
+function load()
+{
+ document.getElementById('jswarning').setAttribute('class','hidden');
+ getkey();
+//	add prng from browser
+//	test for possible prng
+//	alert((window.crypto===undefined));
+ document.getElementById('getkeyinfo').parentNode.parentNode.setAttribute('class','hidden');
+ document.getElementById('pubkey').parentNode.parentNode.setAttribute('class','hidden');
+}
+
+function encrypt()
+{
+ pubkey=document.e.pkey.value;
+
+ if(document.e.keyid.value.length) keyid=document.e.keyid.value;
+ else                              keyid='0000000000000000';
+ if(keyid.length != 16)
+ {
+   alert('Invalid Key Id');
+   return;
+ } 
+ 
+ keytyp = -1;
+ if(document.e.pktype.value == 'ELGAMAL') keytyp = 1;
+ if(document.e.pktype.value == 'RSA')     keytyp = 0;
+ if(keytyp == -1)
+ {
+   alert('Unsupported Key Type');
+   return;
+ } 
+
+
+ var startTime=new Date();
+
+ var text=document.e.text.value+'\r\n';
+ document.e.text.value=doEncrypt(keyid, keytyp, pubkey, text);
+
+ var endTime=new Date();
+ document.e.howLong.value=(endTime.getTime()-startTime.getTime())/1000.0;
+ document.e.encrypt.removeAttribute('disabled');
+ document.getElementById('howLong').parentNode.setAttribute('class','show');
+ document.getElementById('encrypt').setAttribute('class','hidden');
+}
+
+function getkey()
+{
+ var pu=new getPublicKey(document.t.pubkey.value);
+ if(pu.vers == -1)
+  return;
+
+ document.t.vers.value=pu.vers;
+ document.t.user.value=pu.user;
+ document.t.keyfp.value=pu.fp;
+ document.t.keyid.value=pu.keyid;
+
+ var pubkey = pu.pkey.replace(/\n/g,'');
+ document.t.pktype.value=pu.type;
+ document.t.pkey.value=pubkey;
+
+ document.e.pkey.value=pubkey;
+ document.e.keyid.value=pu.keyid;
+ document.e.pktype.value=pu.type;
+ document.e.encrypt.removeAttribute('disabled');
+}
+
+</script>
+</body>
+</html>
