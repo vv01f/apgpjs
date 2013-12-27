@@ -31,10 +31,10 @@ to edit your existing key and delete an id with gpg on cli:
 
 in gpg command line:
 
-- adduid
-- uid 1
-- deluid
-- save
+    adduid
+    uid 1
+    deluid
+    save
 
 back on cli:
 
