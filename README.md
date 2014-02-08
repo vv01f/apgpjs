@@ -1,7 +1,8 @@
-apgpjs
-======
+a PGP JavaScript 
+================
 
-JavaScript to have messages encrypted with PGP - e.g. for web/contact-forms
+JavaScript to have messages encrypted with PGP - e.g. for web/contact-forms like:
+* https://privacydresden.noblogs.org/kontakt/
 
 
 used Main source: http://www.hanewin.net/
