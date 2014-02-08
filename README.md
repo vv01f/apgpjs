@@ -12,8 +12,9 @@ with a non-specific proprietary licence (all rights reserved, but put up to be u
 
 ## why?
 
-because it makes sense to encrypt kommunikation although email is not secure at least the information transported in the body can be secured
-e.g. you can be contacted by customers via a web form and they do not need to fear someone reading the credentials they had to give for proper identification.
+1. because it makes sense to encrypt communikation although email is not secure at least the information transported in the body can be secured
+2. e.g. you can be contacted by customers via a web form and they do not need to fear someone reading the credentials they had to give for proper identification
+3. to enable people that do not have a dedicated email client to send you encrypted email
 
 ## how to start
 
