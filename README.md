@@ -103,4 +103,6 @@ optionally it is good to provide additionally
 
 ## License(s)
 
-The parts have been written by different people under different licenses, these are included in the source code of the files.
+no warranties of any kind
+
+the parts have been written by different people under different licenses, these are included in the source code of the files and have to be deployed with any copy.
