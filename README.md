@@ -2,10 +2,10 @@ a PGP JavaScript
 ================
 
 JavaScript to have messages encrypted with PGP - e.g. for web/contact-forms like:
-* https://privacydresden.noblogs.org/kontakt/
+* [Privacy Dresden](https://privacydresden.noblogs.org/kontakt/)
 
 
-used Main source: http://www.hanewin.net/
+used Main source: [haneWIN](http://www.hanewin.net/) by Herbert Hanewinkel
 * http://www.hanewin.net/encrypt/PGcrypt.htm
 * http://www.hanewin.net/encrypt/PGdecode.htm
 with a non-specific proprietary licence (all rights reserved, but put up to be used)
