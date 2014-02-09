@@ -1,3 +1,6 @@
-PGP / GnuPG / OpenPGP Message Encryption in JavaScript
+OpenPGP message and key decoding, encoding, encryption and decryption functions in JavaScript
 
-© Herbert Hanewinkel
+main source by Herbert Hanewinkel (haneWIN)
+
+the licenses of the different parts apply and must be deployed with any future copy.
+no warranties of any kind.
