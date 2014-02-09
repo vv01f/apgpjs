@@ -5,10 +5,11 @@ JavaScript to have messages encrypted with PGP - e.g. for web/contact-forms like
 * [Privacy Dresden](https://privacydresden.noblogs.org/kontakt/)
 
 
-used Main source: [haneWIN](http://www.hanewin.net/) by Herbert Hanewinkel
+used Main source written by Herbert Hanewinkel, [haneWIN](http://www.hanewin.net/)
 * http://www.hanewin.net/encrypt/PGcrypt.htm
 * http://www.hanewin.net/encrypt/PGdecode.htm
-with a non-specific proprietary licence (all rights reserved, but put up to be used)
+
+with a non-specific proprietary licence (all rights reserved, but put up and described to be used)
 
 ## why?
 
@@ -16,16 +17,17 @@ with a non-specific proprietary licence (all rights reserved, but put up to be u
 2. e.g. you can be contacted by customers via a web form and they do not need to fear someone reading the credentials they had to give for proper identification
 3. to enable people that do not have a dedicated email client to send you encrypted email
 
+
 ## how to start
 
 just use the example 'myPGPencode.htm' and experiment with it.
 it should be no problem...
 * put in your key,
-* check the details that can be used to identify you
+* offline-check the details that can be used to identify you
 * change it for e.g. a contact form
+* give pull requests if you improved things
 
-
-## how to get my email out of my key
+## how to get my email address out of my key
 
 you can either
 * reuse your keys in place for a webform
